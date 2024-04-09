@@ -39,6 +39,34 @@
       alert('오늘 국밥 먹음!!')
     }
 ">
+<br>
+ <input id="testInput1" type="text" value="onchange 테스트" onchange="alert('changed')">
+ <br>
+ <input id="testInput2" type="text" onkeydown="alert('key down')">
+
+ <script>
+  document.write("방법1")
+ </script>
+ <input type="button" value="clear" onclick="
+ document.querySelector('#testInput1').value = ''
+">
+
+<script>
+  방법1
+  function clearMethod() {
+      var test = document.querySelector('#testInput1')
+      test.value = ''
+    }
+  </script>
+ 방법2
+   <input type="button" value="clear" onclick="
+ var test = document.querySelector('#testInput2')
+ test.value = ''
+">
+ 방법3
+  <input type="button" value="clear" onclick="
+ document.querySelector('#testInput').value = ''
+">
 </body>
 
 </html>
