@@ -1,0 +1,21 @@
+JS JavaScript, 
+인터프리터 언어, 
+
+확인)
+크롬 웹브라우저, 개발자 도구 -> 콘솔 
+예) alert("오늘 점심 뭐 먹지?")
+
+- 구분자 seperator
+예) 탐색기 > , 경로에서 \(=원화), /(./css/style.css)
+
+HTML 
+  <input type="button" value="night" onclick="
+  // onclick 안의 내용부터, 자바스크립트
+  (점) : 구분자다. 폴더 안에 폴더 또는 파일
+  -> 폴더 대신 이름을 객체라고 부르기. 
+  -> 객체 안에, 속성과 함수가 있음. 
+  -> 비유 : 수납도구
+
+  document.querySelector('body').style.backgroundColor = 'black';
+  document.querySelector('body').style.color = 'white';
+  ">
