@@ -29,10 +29,15 @@
     this.value = 'night';
     var alist = document.querySelectorAll('a');
         var i = 0;
-        while ( i < alist.length) {
+        // while 문 버전, while (조건식) { 참일 경우 실행}
+        // while ( i < alist.length) {
+          // for(초깃값; 조건식; 값의 증감){참일 경우 실행}
+          for(i = 0; i < alist.length; i++) {
             alist[i].style.color = 'blue';
             console.log(alist[i]);
-            i = i + 1 ;
+            // while 문 일 경우, 증감식이 없어서 사용했고,
+            // for 문 일 경우는, 증감식을 가지고 있어서 필요가 없다.
+            // i = i + 1 ;
         }   
   }
   ">
