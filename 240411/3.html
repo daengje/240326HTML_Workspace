@@ -8,6 +8,10 @@
 </head>
 
 <body>
+  <!-- 함수 사용하기 -->
+  <input id="night_day" type="button" value="night" onclick="
+  nightDayHandler(this);
+  ">
   <script>
     // 준비물 키워드 : function , return :  예약어. 시스템에서 미리 사용중이라서, 
     // 이름으로 사용불가. 
@@ -28,6 +32,7 @@
     // ex) sum(1,2) => 3 
     // 결론, 함수를 사용시(호출시) 함수가 정의된 부분으로 간다. 
        
+    // 1) 함수의 정의 부분. 
   function nightDayHandler(self) {
     var target = document.querySelector('body');
             if (self.value === 'night') {
