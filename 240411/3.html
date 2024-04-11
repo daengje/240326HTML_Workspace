@@ -31,36 +31,39 @@
     // 2) 함수를 사용 부분 : 함수명(인자값), 함수 호출(= 함수 사용)
     // ex) sum(1,2) => 3 
     // 결론, 함수를 사용시(호출시) 함수가 정의된 부분으로 간다. 
-       
+
+
+    // 색 변경 함수, 리팩토링 중. 
+    function setColor(color) {
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while (i < alist.length) {
+        alist[i].style.color = color;
+        console.log(alist[i]);
+        i = i + 1;
+      }
+    }
+
     // 1) 함수의 정의 부분. 
-  function nightDayHandler(self) {
-    var target = document.querySelector('body');
-            if (self.value === 'night') {
-                target.style.backgroundColor = 'black';
-                target.style.color = 'white';
-                self.value = 'day'
-    
-                var alist = document.querySelectorAll('a');
-                var i = 0;
-                while ( i < alist.length) {
-                        alist[i].style.color = 'powderblue';
-                        console.log(alist[i]);
-                        i = i + 1;
-                    }
-            } else {
-                target.style.backgroundColor = 'white';
-                target.style.color = 'black';
-                self.value = 'night'
-    
-                var alist = document.querySelectorAll('a');
-                var i = 0;
-                while ( i < alist.length) {
-                        alist[i].style.color = 'blue';
-                        console.log(alist[i]);
-                        i = i + 1;
-                    }
-    
-                }
+    function nightDayHandler(self) {
+      var target = document.querySelector('body');
+      if (self.value === 'night') {
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        self.value = 'day'
+
+        // 함수 사용
+        setColor('powderblue');
+     
+      } else {
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        self.value = 'night'
+
+       // 함수 사용
+       setColor('blue');
+
+      }
     }
   </script>
   <h1><a href="index.html">WEB</a></h1>
