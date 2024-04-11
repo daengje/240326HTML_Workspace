@@ -4,21 +4,22 @@
 </head>
 
 <body>
-<!-- == : 데이터의 값만 비교하고, 
+  <!-- == : 데이터의 값만 비교하고, 
 예) "123" == 123 : 참, 
 왼쪽 문자열의 123, 오른쪽 숫자의 123
 
 === : 데이터의 값과 데이터의 타입도 같이 비교해요. 
 "123" === 123 : 거짓 -->
   <input id="night_day" type="button" value="night" onclick="
-  if(document.querySelector('#night_day').value === 'night') {
-      document.querySelector('body').style.backgroundColor = 'black';
-    document.querySelector('body').style.color= 'white';
-    document.querySelector('#night_day').value = 'day';   
+  var target = document.querySelector('body');
+  if(this.value === 'night') {
+    target.style.backgroundColor = 'black';
+    target.style.color= 'white';
+    this.value = 'day';   
   } else {
-    document.querySelector('body').style.backgroundColor = 'white';
-    document.querySelector('body').style.color= 'black';
-    document.querySelector('#night_day').value = 'night';   
+    target.style.backgroundColor = 'white';
+    target.style.color= 'black';
+    this.value = 'night';   
   }
   ">
 
