@@ -33,8 +33,18 @@
     // 결론, 함수를 사용시(호출시) 함수가 정의된 부분으로 간다. 
 
 
+    // body 부분에, 배경색, 글자색 변경 부분 , 함수로 각각 분리 
+    function BodySetColor(color) {
+      document.querySelector('body').style.color = color;
+    }
+
+    function BodySetBackgroudColor(color) {
+      document.querySelector('body').style.backgroundColor = color;
+    }
+
     // 색 변경 함수, 리팩토링 중. 
-    function setColor(color) {
+    // setColor ->  LinksSetColor 이름 변경
+    function LinksSetColor(color) {
       var alist = document.querySelectorAll('a');
       var i = 0;
       while (i < alist.length) {
@@ -46,22 +56,36 @@
 
     // 1) 함수의 정의 부분. 
     function nightDayHandler(self) {
-      var target = document.querySelector('body');
+      // var target = document.querySelector('body');
       if (self.value === 'night') {
-        target.style.backgroundColor = 'black';
-        target.style.color = 'white';
+        // target.style.backgroundColor = 'black';
+        // target.style.color = 'white';
+
+        // body 부분 색 변경 함수로 변경
+        BodySetBackgroudColor('black');
+        BodySetColor('white');
+
         self.value = 'day'
 
-        // 함수 사용
-        setColor('powderblue');
-     
-      } else {
-        target.style.backgroundColor = 'white';
-        target.style.color = 'black';
-        self.value = 'night'
+        
 
-       // 함수 사용
-       setColor('blue');
+
+        // 함수 사용
+        LinksSetColor('powderblue');
+
+      } else {
+        // target.style.backgroundColor = 'white';
+        // target.style.color = 'black';
+        
+        // body 부분 색 변경 함수로 변경
+        BodySetBackgroudColor('white');
+        BodySetColor('black');
+
+        self.value = 'night'
+       
+
+        // 함수 사용
+        LinksSetColor('blue');
 
       }
     }
