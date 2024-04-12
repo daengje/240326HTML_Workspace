@@ -30,6 +30,21 @@
   </script>
   <!-- 작업순서3 -->
 
+  <!-- 작업순서7 -->
+  <script>
+    var Links = {
+      setColor: function (color) {
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while (i < alist.length) {
+           alist[i].style.color = color; 
+           i = i + 1; }
+      }
+    } 
+  </script>
+  <!-- 작업순서7 -->
+
+
   <!-- 작업순서2 -->
   <script>
     // 작업순서4 : 사용 안하는 함수 주석.
@@ -69,7 +84,11 @@
         Body.setColor('white')
 
         self.value = 'day'
-        LinksSetColor('powderblue');
+        //작업 순서 8, 기존 함수 버전 주석
+        // LinksSetColor('powderblue');
+
+        // 작업 순서 9, 객체 버전으로 변경. 
+        Links.setColor('powderblue')
 
       } else {
         // 작업 순서 5, 사용안하는 함수 주석
@@ -86,7 +105,12 @@
         Body.setColor('black')
 
         self.value = 'night'
-        LinksSetColor('blue');
+        //작업 순서 8, 기존 함수 버전 주석
+        // LinksSetColor('blue');
+
+        // 작업 순서 9, 객체 버전으로 변경. 
+        Links.setColor('blue')
+
       }
     }
   </script>
