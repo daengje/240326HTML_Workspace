@@ -17,7 +17,7 @@ h1 {
 /* 순서3, css 파일에서, grid 옵션 작업.  */
 #grid {
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 200px 1fr;
 }
 
 #grid ol {
@@ -26,7 +26,7 @@ h1 {
 
 ol {
   border-right: 1px solid gray;
-  width: 100px;
+  width: 150px;
   margin: 0;
   padding: 20px;
 }
@@ -59,7 +59,14 @@ a {
   row-gap: 20px;
 }
 
+/* 전체 이미지의 크기를 설정 */
 img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+}
+
+.picture_container > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
