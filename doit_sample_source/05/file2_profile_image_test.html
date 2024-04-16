@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    #imagePreview {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background-size: cover;
+  background-position: center;
+}
+  </style>
+<script>
+  document.getElementById('fileInput').addEventListener('change', 
+  //익명함수, 함수 이름이 없다. 
+  // 보통 이름이 없다면, 1회용으로 사용하는 , 1회용함수, 
+  // 언제 많이 쓰냐면, 지금처럼 특정의 이벤트 핸들러를 추가시 많이 사용함. 
+  function (event) {
+    // 첫번째 선택된 사진을 의미
+  var file = event.target.files[0];
+  // 웹 브라우저의 기능중에서, 읽는 도구. 
+  // 생성자 호출해서, 객체로 만들었다.
+  var reader = new FileReader();
+
+  reader.onload = function(e) {
+    // 보여주기 위한 미리보기 화면 요소
+    var imagePreview = document.getElementById('imagePreview');
+    // 요소에서 속성으로 배경을 지정한다. 
+    imagePreview.style.backgroundImage = "url('" + e.target.result + "')";
+  };
+
+  reader.readAsDataURL(file);
+});
+
+</script>
+
+<!-- 이미지 파일을 선택하는 태그 -->
+  <input type="file" id="fileInput" accept="image/*">
+  <!-- 선택된 이미지 미리보기 보여주는 화면 -->
+<div id="imagePreview"></div>
+</body>
+</html>

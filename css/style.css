@@ -26,7 +26,7 @@ h1 {
 
 ol {
   border-right: 1px solid gray;
-  width: 100px;
+  width: 130px;
   margin: 0;
   padding: 20px;
 }
@@ -38,6 +38,7 @@ a {
 
 #article {
   padding-left: 20px;
+  padding-top: 20px;
 }
 
 #active {
