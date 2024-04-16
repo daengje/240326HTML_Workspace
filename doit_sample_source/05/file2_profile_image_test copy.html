@@ -17,31 +17,26 @@
 }
   </style>
 <script>
-  //익명함수, 함수 이름이 없다. 
-  // 보통 이름이 없다면, 1회용으로 사용하는 , 1회용함수, 
-  // 언제 많이 쓰냐면, 지금처럼 특정의 이벤트 핸들러를 추가시 많이 사용함. 
-  document.getElementById('fileInput').addEventListener('change', 
-  function (event) {
-    // 첫번째 선택된 사진을 의미
-  var file = event.target.files[0];
-  // 웹 브라우저의 기능중에서, 읽는 도구. 
+  // 함수 이름을 이용했고, 파라미터로 , event 객체를 받기. 
+  function previewImage (event) {
+    // 웹 브라우저의 기능중에서, 읽는 도구. 
   // 생성자 호출해서, 객체로 만들었다.
   var reader = new FileReader();
 
-  reader.onload = function(e) {
+  reader.onload = function() {
     // 보여주기 위한 미리보기 화면 요소
     var imagePreview = document.getElementById('imagePreview');
     // 요소에서 속성으로 배경을 지정한다. 
-    imagePreview.style.backgroundImage = "url('" + e.target.result + "')";
+    imagePreview.style.backgroundImage = "url('" + reader.result + "')";
   };
 
-  reader.readAsDataURL(file);
-});
+  reader.readAsDataURL(event.target.files[0]);
+};
 
 </script>
 
 <!-- 이미지 파일을 선택하는 태그 -->
-  <input type="file" id="fileInput" accept="image/*">
+  <input type="file" id="fileInput" accept="image/*" onchange="previewImage(event)">
   <!-- 선택된 이미지 미리보기 보여주는 화면 -->
 <div id="imagePreview"></div>
 </body>
